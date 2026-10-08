@@ -1,0 +1,624 @@
+@charset "utf-8";
+
+
+ /* 
+ 
+ characthere from ligne = 327
+
+ voice cast from ligne = 468
+
+
+ umi/歌 from ligne = 562
+ 
+ */
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+   
+    padding-bottom: calc(100vw * 624 / 6420 + 40px);
+    /* vw = 画面％。　海の写真の本当（画面）の長さ　*　写真の高さ/写真の長さ　(40pxは一応です。難しかった。）*/
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    color: #1c3a4f;
+
+    /* 空の色 */
+    background-color: #56CAF5;
+}
+
+p {
+    margin: 1em 0;
+    line-height: 2;
+    text-align: justify;
+    font-size: 16px;
+}
+
+a {
+    color: #d8402a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.4s;
+}
+a:hover {
+    color: #fff;
+}
+a img {
+    transition: 0.4s;
+}
+a:hover img {
+    opacity: 0.75;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/* header */
+header {
+    position: relative;
+    z-index: 2;
+}
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 960px;
+    margin: auto;
+    padding: 24px 0 12px;
+}
+.header_wrapper .logo {
+    width: 230px;
+}
+.header_wrapper .logo h1 {
+    margin: 0;
+}
+
+/* 飛行機の飛ぶロゴ */
+.header_wrapper .logo img {
+    animation: vol 6s ease-in-out infinite;
+    
+}
+@keyframes vol {
+    0%, 100% { transform: translateY(0)          rotate(-1.5deg); 
+    
+    }
+
+    50%      { transform: translateY(-10px)   rotate(1.5deg); 
+    }
+}
+
+/* メーニュ */
+.header_nav {
+    width: 58%;
+}
+.header_nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 17px;
+}
+.header_nav a {
+    color: #12384f;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+.header_nav a:hover {
+    color: #d8402a;
+}
+
+
+/* 下の絵*/
+.horizon {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vw * 624 / 6420);
+
+    z-index: 5;
+    /* 下の絵*/         
+    pointer-events: none;
+    overflow: hidden;
+
+    /* 一応 */
+    background-image: linear-gradient(to top, #34A5BD 1.7vw, transparent 1.7vw);
+}
+
+
+.mer {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+
+
+
+
+
+
+
+/* フーター*/
+footer {
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+}
+.footer_nav {
+    padding-top: 24px;
+}
+.footer_nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer_nav ul li {
+    margin: 0 2em;
+}
+.footer_nav a {
+    color: #12384f;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+.footer_nav a:hover {
+    color: #d8402a;
+}
+
+.copyright {
+    padding: 24px 0 40px;
+    color: #6a8496;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* マイン */
+main {
+    position: relative;
+    z-index: 2;
+
+
+    width: 960px;
+    margin: 40px auto 0;
+     /*padding-right: 90px; タイトル */
+    padding-bottom: 120px;
+}
+
+
+.title_vertical {
+    position: absolute;
+    top: 0;
+    right: 0;
+    writing-mode: vertical-rl;
+    margin-right: -90px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    color: #d8402a;
+    text-shadow: 0 2px 6px rgba(255,255,255,0.5);
+}
+
+
+.subtitle {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #12384f;
+}
+
+.lead .tagline {
+    width: 80%;
+    font-size: 40px;
+    color: #d8402a;
+    font-weight: bold;
+  
+}
+.lead  {
+    width: 90%;
+    font-size: 20px;
+    margin-bottom: 20px
+    
+}
+
+
+
+/* 写真の周り */
+.collage {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+
+.collage:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.collage_text {
+    width: 50%;
+}
+
+
+/*子供 */
+.collage:nth-of-type(1) .collage_text { width: 50%; }
+.collage:nth-of-type(1) .collage_img  { width: 45%; margin-top: 10px; }
+
+/* FIO*/
+.collage:nth-of-type(2) .collage_text { width: 45%; }
+.collage:nth-of-type(2) .collage_img  { width: 47%; margin-top: -20px; }
+
+/* 飯*/
+.collage:nth-of-type(3) .collage_text { width: 60%; }
+.collage:nth-of-type(3) .collage_img  { width: 40%; margin-top: 0; }
+
+
+/*空 */
+.collage:nth-of-type(4) .collage_text { width: 60%; }
+.collage:nth-of-type(4) .collage_img  { width: 35%; margin-top: 30; }
+
+/*写真箱 */
+.vignette {
+    padding: 8px 8px 20px;
+    background-color: #fff;
+    box-shadow: 0 6px 18px rgba(20,60,90,0.3);
+    margin-bottom: 20px;
+}
+.vignette img {
+    display: block;
+}
+.vignette figcaption {
+    padding-top: 14px;
+    font-size: 20px;
+    text-align: center;
+    color: #6a7f8c;
+}
+
+
+/*子供 */
+.collage:nth-of-type(1) .vignette { 
+    transform: rotate(-1.6deg); 
+}
+/* FIO*/
+.collage:nth-of-type(2) .vignette { 
+    transform: rotate(1.2deg); 
+ }
+/* 飯*/
+.collage:nth-of-type(3) .vignette { 
+    transform: rotate(-1deg);   
+ }
+ /* 景色飛行機*/
+.vignette { 
+    transform: rotate(0deg); 
+}
+
+
+
+
+
+
+/* キャラクター*/
+
+/* キャラクターカラム */
+.perso_rangee {
+    display: flex;              
+    align-items: stretch;   /* 同じサイズ*/    
+    margin-bottom: 90px;
+}
+.perso {
+    display: flex;
+    flex-direction: column;     
+    flex: 1;                    
+    padding: 0 20px;
+}
+
+/* 縦線*/
+.perso + .perso {
+    border-left: 2px solid #d8402a;
+}
+
+/* 縦 */
+.perso_nom {
+    writing-mode: vertical-rl;
+    white-space: nowrap;   /*ドナルド・カーチス ！ */
+    height: auto;
+    margin: 0 auto 18px;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    color: #d8402a;
+}
+.perso p {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.perso_img {
+    margin-top: auto;
+    width: 100%;
+}
+
+/* --- キャラクター下グルプ ------------ */
+
+.titre_groupes {
+    margin: 0 0 44px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px;
+    letter-spacing: 0.03em;
+    color: #d8402a;
+}
+
+.groupe {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+
+.groupe:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+.groupe_text { 
+    width: 46%; 
+}
+.groupe_img  {
+     width: 48%; 
+    }
+
+.groupe_nom {
+    margin: 0 0 14px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #12384f;
+}
+.groupe p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.groupe_imgPICO {
+    width: 48%;              
+    display: flex;           
+    justify-content: center;  
+}
+.groupe_imgPICO img {
+    width: 42%;             
+}
+
+.groupe_textPICO{
+    margin-top: 30px;
+}
+/* キャラクターband */
+.liste_bosses {
+    margin: 1.2em 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+}
+.liste_bosses li {
+    display: flex;
+    line-height: 2;
+}
+.liste_bosses b {
+    min-width: 2.4em;
+    color: #d8402a;
+}
+
+.groupe_imgBand {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+.groupe_imgBand ul {
+    width: 48%;
+    margin: 0 ;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.groupe_imgBand img {
+    width: 48%;
+    margin-top: -50px;
+    margin-right: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ボイスキャスト */
+
+
+
+.vc {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.vc:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+.vc:nth-of-type(even) .vc_visuel { margin-top: 50px; }
+
+/* --- 絵箱 --- */
+.vc_visuel {
+    position: relative;
+    width: 48%;
+    border: 5px solid #d8402a;   
+    background-color: #fff;
+}
+.vc_visuel img { display: block; width: 100%; }
+
+
+
+/* --- voice cast --- */
+.vc_texte { width: 46%; }
+.vc_perso {
+    margin: 0 0 14px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #d8402a;              
+}
+
+
+/* ポルコ  */
+    .vc:nth-of-type(1) .vc_visuel {
+        border-color: #d8402a; 
+        margin-top: 30px;}
+    .vc:nth-of-type(1) .vc_perso  { 
+        color:        #d8402a; }
+
+
+    .leadP {
+        width: 80%;
+        font-size: 40px;
+        color: #d8402a;
+        font-weight: bold;
+    
+    }
+
+
+/* フィオ  */
+    .vc:nth-of-type(2) .vc_visuel { 
+        border-color: #2f6fb0; }
+    .vc:nth-of-type(2) .vc_perso  { 
+        color:        #2f6fb0; }
+
+    .leadF {
+        width: 90%;
+        font-size: 45px;
+        /* 名前は短いのでちょっとおおきくにします！  */
+        color: #2f6fb0;
+        font-weight: bold;
+        text-align: right;
+    }
+
+/* ジーナ */
+    .vc:nth-of-type(3) .vc_visuel {
+        border-color: #8a4f9e; }
+    .vc:nth-of-type(3) .vc_perso  { 
+        color:        #8a4f9e; }
+    .leadG {
+        width: 80%;
+        font-size: 40px;
+        color: #8a4f9e;
+        font-weight: bold;
+    
+    }
+
+
+
+.vc_texte p {
+    font-size: 15px;
+}
+
+
+
+
+
+/* umi.html le temp des cerines*/
+
+.musica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-right: -90px;  
+}
+
+
+.btn_music {
+    width: 220px;          
+    flex-shrink: 0;        /*butonは、そのまま */
+    cursor: pointer;/*クリックをわかりやすい*/
+    transition: transform 0.15s ease;
+    
+}
+ /*クリックして  */
+.btn_music:hover { 
+    transform: scale(1.06);
+
+}
+.btn_music:active { 
+    transform: scale(0.92); 
+}  
+
+ /* porcoのイメージ */
+.musica_img {
+    width: 320px;
+    margin-left: 90px
+}
+
+.umiRed{
+    color: #d8402a;
+    font-size: 24px;
+    text-align: center;
+}
+
+.umiP{
+    font-size: 14px;
+    text-align: center;
+}
+
+.uta{
+
+    display: flex;
+    justify-content: space-between; 
+    
+    margin-top: 26px;
+}
+
+.nihonGo{
+    margin-right: 0;
+    
+}
+.nihonGo p{
+   text-align: right;
+    line-height:3.6;
+}
+
+.yomikata {
+    display: block;
+    font-size: 0.7em;
+    color: #a36666;
+    margin-bottom: 2px;
+}
